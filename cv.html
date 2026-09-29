@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Резюме Бортникова Дениса — Junior Fullstack Developer (Python / Vue.js)">
+  <title>Резюме — Денис Бортников</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #66717d;
+      --line: #d9e0e6;
+      --accent: #176b87;
+      --accent-soft: #e8f4f7;
+      --paper: #ffffff;
+      --canvas: #edf1f4;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(23, 107, 135, .35);
+    }
+
+    a:hover { border-bottom-color: var(--accent); }
+
+    .resume {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(260px, .85fr);
+      width: min(1120px, calc(100% - 40px));
+      margin: 32px auto;
+      background: var(--paper);
+      box-shadow: 0 16px 50px rgba(35, 49, 61, .12);
+    }
+
+    .main { padding: 52px 48px 46px; }
+
+    .sidebar {
+      padding: 52px 36px 46px;
+      background: #f7f9fa;
+      border-left: 1px solid var(--line);
+    }
+
+    .hero { margin-bottom: 34px; }
+
+    .eyebrow {
+      margin: 0 0 9px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 38px;
+      line-height: 1.08;
+      letter-spacing: -.025em;
+    }
+
+    .role {
+      margin: 7px 0 20px;
+      color: var(--muted);
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .summary { margin: 0; font-size: 15px; }
+
+    .section { margin-top: 31px; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 18px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .project { margin-bottom: 25px; break-inside: avoid; }
+
+    .project-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 7px;
+    }
+
+    .project h3 { margin: 0; font-size: 17px; }
+
+    .project-kind {
+      flex: none;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .project > p { margin: 0 0 9px; }
+
+    ul { margin: 0; padding-left: 20px; }
+    li + li { margin-top: 5px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      padding: 3px 9px;
+      color: #15566c;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .side-section { margin-bottom: 30px; break-inside: avoid; }
+
+    .side-title {
+      margin: 0 0 11px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+      font-size: 16px;
+    }
+
+    .contact-list, .skill-list { margin: 0; padding: 0; list-style: none; }
+    .contact-list li, .skill-list li { margin: 0 0 8px; }
+    .contact-list span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+
+    .skill-list strong { color: var(--accent); }
+
+    .education h3 { margin: 0 0 3px; font-size: 14px; }
+    .education p { margin: 0; }
+    .education .meta { color: var(--muted); font-size: 12px; }
+
+    .note {
+      margin-top: 26px;
+      padding-top: 14px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    @media (max-width: 780px) {
+      .resume { grid-template-columns: 1fr; width: 100%; margin: 0; box-shadow: none; }
+      .main, .sidebar { padding: 34px 24px; }
+      .sidebar { border-top: 1px solid var(--line); border-left: 0; }
+      .project-head { display: block; }
+      .project-kind { margin-top: 2px; }
+      h1 { font-size: 32px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 10mm; }
+      body { background: #fff; font-size: 10.2px; line-height: 1.4; }
+      .resume {
+        grid-template-columns: 64% 36%;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+      }
+      .main { padding: 7mm 7mm 5mm 5mm; }
+      .sidebar { padding: 7mm 5mm 5mm 6mm; }
+      h1 { font-size: 27px; }
+      .role { margin: 4px 0 12px; font-size: 15px; }
+      .summary { font-size: 10.7px; }
+      .section { margin-top: 18px; }
+      .section-title { margin-bottom: 10px; font-size: 15px; }
+      .project { margin-bottom: 15px; }
+      .project h3 { font-size: 12px; }
+      .side-section { margin-bottom: 18px; }
+      .side-title { font-size: 12px; }
+      .tag { padding: 2px 6px; font-size: 8.5px; }
+      a { color: inherit; }
+    }
+  
+    /* Макет в стиле эталонного PDF */
+    body {
+      margin: 70px 85px;
+      color: #222;
+      background: #fff;
+      font-family: Nunito, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .resume {
+      display: grid;
+      grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .main { padding: 0 28px 0 0; }
+    .sidebar {
+      padding: 0 0 0 20px;
+      background: #fff;
+      border: 0;
+    }
+
+    .hero {
+      min-height: 245px;
+      margin: 0 0 22px;
+    }
+
+    .photo {
+      float: left;
+      width: 220px;
+      height: 220px;
+      margin: -4px 24px 6px 0;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
+    }
+
+    .eyebrow { display: none; }
+
+    h1 {
+      margin: 0 0 2px;
+      color: #101c23;
+      font-size: 31px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .role {
+      margin: 0 0 18px;
+      color: #222;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .summary {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.65;
+      text-align: justify;
+    }
+
+    .section { clear: both; margin-top: 28px; }
+
+    .section-title,
+    .side-title {
+      display: block;
+      margin: 0 0 14px;
+      padding: 0 0 2px;
+      border-bottom: 2px solid #e5e5e5;
+      color: #181818;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .section-title::after { display: none; }
+
+    .project {
+      margin: 0 0 24px;
+      break-inside: avoid;
+    }
+
+    .project-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 5px;
+    }
+
+    .project h3,
+    .education h3 {
+      margin: 0 0 3px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .project-kind {
+      color: #777;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .project > p,
+    .education p {
+      margin: 0 0 6px;
+      text-align: justify;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 28px;
+      text-align: justify;
+    }
+
+    li + li { margin-top: 2px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 5px;
+      margin: 8px 0 0;
+    }
+
+    .tag {
+      padding: 1px 8px;
+      color: #111922;
+      background: #999fa2;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .side-section {
+      margin: 0 0 32px;
+      break-inside: avoid;
+    }
+
+    .contact-list,
+    .skill-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+    }
+
+    .contact-list li,
+    .skill-list li {
+      margin: 0 0 4px;
+      text-align: left;
+    }
+
+    .contact-list span {
+      display: inline;
+      margin-right: 4px;
+      color: #222;
+      font-size: inherit;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .contact-list span::after { content: ":"; }
+    .skill-list strong { color: #222; }
+    .education .meta {
+      color: gray;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    a {
+      color: #3b3e40;
+      text-decoration: underline;
+      text-decoration-color: rgba(59, 62, 64, .45);
+      text-underline-offset: 2px;
+      border: 0;
+    }
+
+    .note { display: none; }
+
+    @media (max-width: 900px) {
+      body { margin: 30px; }
+      .resume { grid-template-columns: 1fr; }
+      .main, .sidebar { padding: 0; }
+      .sidebar { margin-top: 12px; }
+    }
+
+    @media (max-width: 620px) {
+      body { margin: 22px; }
+      .photo {
+        float: none;
+        width: 150px;
+        height: 150px;
+        margin: 0 0 18px;
+      }
+      .hero { min-height: 0; }
+      h1 { font-size: 28px; }
+      .role { font-size: 20px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 11mm 12mm; }
+      body {
+        margin: 0;
+        font-size: 9.2px;
+        line-height: 1.4;
+      }
+      .resume { grid-template-columns: 59% 41%; }
+      .main { padding-right: 5mm; }
+      .sidebar { padding-left: 4mm; }
+      .hero { min-height: 41mm; margin-bottom: 3mm; }
+      .photo {
+        width: 40mm;
+        height: 40mm;
+        margin: 0 4mm 1mm 0;
+      }
+      h1 { font-size: 18px; }
+      .role { margin-bottom: 3mm; font-size: 14px; }
+      .summary { font-size: 9.2px; line-height: 1.48; }
+      .section { margin-top: 5mm; }
+      .section-title,
+      .side-title {
+        margin-bottom: 2.5mm;
+        font-size: 14px;
+        border-bottom-width: 1px;
+      }
+      .project { margin-bottom: 4mm; }
+      .project h3,
+      .education h3 { font-size: 9.8px; }
+      .project-kind,
+      .education .meta { font-size: 8.5px; }
+      .side-section { margin-bottom: 5mm; }
+      .tag { padding: .2mm 1.5mm; font-size: 7.5px; }
+      ul { padding-left: 5mm; }
+    }
+
+    /* Экранный предпросмотр листа A4 */
+    body {
+      margin: 24px 0;
+      background: #303030;
+      font-size: 9.2px;
+      line-height: 1.4;
+    }
+
+    .resume {
+      grid-template-columns: 59% 41%;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 11mm 12mm;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+    }
+
+    .main { padding: 0 5mm 0 0; }
+    .sidebar { padding: 0 0 0 4mm; }
+    .hero { min-height: 41mm; margin-bottom: 3mm; }
+
+    .photo {
+      display: flex;
+      float: left;
+      align-items: center;
+      justify-content: center;
+      width: 40mm;
+      height: 40mm;
+      margin: 0 4mm 1mm 0;
+      color: #fff;
+      background: #6f787d;
+      font-size: 17mm;
+      font-weight: 700;
+      letter-spacing: -.06em;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, .15);
+    }
+
+    h1 { font-size: 18px; }
+    .role { margin-bottom: 3mm; font-size: 14px; }
+    .summary { font-size: 9.2px; line-height: 1.48; }
+    .section { margin-top: 5mm; }
+
+    .section-title,
+    .side-title {
+      margin-bottom: 2.5mm;
+      font-size: 14px;
+      border-bottom-width: 1px;
+    }
+
+    .project { margin-bottom: 4mm; }
+    .project h3,
+    .education h3 { font-size: 9.8px; }
+    .project-kind,
+    .education .meta { font-size: 8.5px; }
+    .side-section { margin-bottom: 5mm; }
+    .tag { padding: .2mm 1.5mm; font-size: 7.5px; }
+    ul { padding-left: 5mm; }
+
+    @media (max-width: 850px) {
+      body { margin: 0; background: #fff; }
+      .resume {
+        width: 100%;
+        min-height: 0;
+        padding: 24px;
+        box-shadow: none;
+      }
+    }
+
+    @media print {
+      body { margin: 0; background: #fff; }
+      .resume {
+        width: 100%;
+        min-height: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+
+    .photo {
+      overflow: hidden;
+      clip-path: circle(50% at 50% 50%);
+      padding: 0;
+      background: #eee;
+    }
+    .photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.9);
+      transform-origin: center 25%;
+    }
+
+    .photo {
+      background-image: url("123.jpg");
+      background-size: 190% auto;
+      background-position: center 48%;
+      background-repeat: no-repeat;
+    }
+
+    .education-entry + .education-entry { margin-top: 3mm; }
+
+    .education .key-disciplines { margin-top: 3mm; }
+</style>
+</head>
+<body>
+  <article class="resume">
+    <main class="main">
+      <header class="hero">
+        <div class="photo" role="img" aria-label="Денис Бортников"></div>
+        <p class="eyebrow">Резюме</p>
+        <h1>Денис Бортников</h1>
+        <p class="role">Junior Fullstack Developer · Python / Vue.js</p>
+        <p class="summary">
+          Студент первого курса магистратуры МГТУ им. Н. Э. Баумана. Разрабатываю web-приложения
+          полного цикла: проектирую REST API и модели данных, реализую интерфейсы и связываю
+          frontend с backend. В pet-проекте создал систему управления автосервисом с ролевой
+          моделью, онлайн-записью, уведомлениями и административной панелью.
+        </p>
+
+      </header>
+
+
+      <section class="section">
+        <h2 class="section-title">Опыт работы</h2>
+        <article class="project">
+          <div class="project-head">
+            <h3>ООО АПК «Малиновка» — Разработчик ПО</h3>
+            <span class="project-kind">20.03.2026 — настоящее время</span>
+          </div>
+          <ul>
+            <li>Сопровождаю программное обеспечение и рабочие станции сотрудников: Windows, драйверы, офисные приложения и периферийное оборудование.</li>
+            <li>Диагностирую технические неисправности, устраняю проблемы совместимости и участвую в поддержке внутренней IT-инфраструктуры предприятия.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Практический опыт</h2>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Fullstack Developer — DVB</h3>
+            <span class="project-kind">Pet-проект · 2026</span>
+          </div>
+          <p>
+            Разработал полнофункциональную информационную систему для сети автосервисов:
+            от проектирования структуры данных и REST API до пользовательского интерфейса,
+            административной панели, тестирования и контейнеризации.
+          </p>
+          <ul>
+            <li><strong>Декомпозировал предметную область:</strong> выделил сущности пользователей, автомобилей, филиалов, подразделений, ремонтных боксов, услуг, механиков, заказов и уведомлений.</li>
+            <li><strong>Реализовал ролевую модель:</strong> отдельные права и рабочие сценарии для клиента, механика, менеджера, администратора филиала и системного администратора.</li>
+            <li><strong>Разработал процесс онлайн-записи:</strong> выбор филиала, услуги, автомобиля, даты и времени; создание и отслеживание заказа в личном кабинете.</li>
+            <li><strong>Создал инструменты управления:</strong> CRUD-интерфейсы для сотрудников, филиалов, подразделений и боксов, обработку заказов и просмотр статистики.</li>
+            <li><strong>Связал frontend и backend:</strong> единый Axios-клиент, JWT-аутентификация, обновление сессии, защищённые маршруты и централизованное состояние в Pinia.</li>
+            <li><strong>Реализовал уведомления в реальном времени:</strong> использовал Django Channels и Redis, чтобы изменения по заказам появлялись без перезагрузки страницы.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Проект и код</h2>
+
+        <article class="project">
+          <div class="project-head">
+            <h3><a href="https://github.com/MashumaroDev/DVB_Backend">DVB Backend ↗</a></h3>
+            <span class="project-kind">Python / Django</span>
+          </div>
+          <p>
+            REST API и бизнес-логика системы управления автосервисом.
+          </p>
+          <ul>
+            <li>Django REST Framework, собственная модель пользователя, JWT и permissions для разграничения доступа.</li>
+            <li>PostgreSQL и Django ORM: связи между заказами, услугами, сотрудниками, филиалами и автомобилями.</li>
+            <li>ASGI, WebSocket и Redis для уведомлений; фильтрация данных и журналирование операций.</li>
+            <li>Backend-тесты, нагрузочные сценарии Locust, Dockerfile и Docker Compose для воспроизводимого запуска.</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3><a href="https://github.com/MashumaroDev/DVB_Frontend">DVB Frontend ↗</a></h3>
+            <span class="project-kind">Vue 3 / JavaScript</span>
+          </div>
+          <p>
+            SPA для клиентов и сотрудников с адаптивными пользовательскими и административными интерфейсами.
+          </p>
+          <ul>
+            <li>Vue Router с защищёнными маршрутами, Pinia для авторизации и Axios для работы с REST API.</li>
+            <li>Онлайн-запись, профиль, автомобили пользователя, история и статусы заказов, realtime-уведомления.</li>
+            <li>Административная панель с CRUD-разделами и визуализацией статистики через Chart.js.</li>
+            <li>E2E-сценарии Playwright для авторизации, записи, профиля, навигации и административных функций; запуск в GitHub Actions.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <section class="side-section">
+        <h2 class="side-title">Контакты</h2>
+        <ul class="contact-list">
+          <li><span>Telegram</span><a href="https://t.me/denis_vag">@denis_vag</a></li>
+          <li><span>Почта</span><a href="mailto:dvbortnikov@yandex.ru">dvbortnikov@yandex.ru</a></li>
+          <li><span>Телефон</span><a href="tel:+79378136099">+7 (937) 813-60-99</a></li>
+          <li><span>GitHub</span><a href="https://github.com/MashumaroDev">@MashumaroDev</a></li>
+          <li><span>Языки</span>Русский — native<br>English — B1</li>
+          <li><span>Город</span>Москва</li>
+        </ul>
+      </section>
+
+      <section class="side-section">
+        <h2 class="side-title">Навыки</h2>
+        <ul class="skill-list">
+          <li><strong>Backend:</strong> Python, Django, Django REST Framework, REST API, JWT, Django Channels</li>
+          <li><strong>Frontend:</strong> JavaScript, Vue 3, Vue Router, Pinia, Axios, HTML, CSS, Chart.js</li>
+          <li><strong>Базы данных:</strong> PostgreSQL, Redis, Django ORM, миграции</li>
+          <li><strong>Тестирование:</strong> юнит-тесты, Playwright, Locust</li>
+          <li><strong>Инструменты:</strong> Git, GitHub Actions, Docker, Docker Compose, Vite, Linux</li>
+        </ul>
+      </section>
+
+
+      <section class="side-section">
+        <h2 class="side-title">Компетенции</h2>
+        <ul class="skill-list">
+          <li><strong>Архитектура:</strong> декомпозиция по доменам, REST API, клиент-серверное взаимодействие</li>
+          <li><strong>Безопасность:</strong> JWT, ролевая модель, permissions, защищённые маршруты</li>
+          <li><strong>Качество:</strong> читаемый код, обработка ошибок, backend- и E2E-тестирование</li>
+          <li><strong>Разработка:</strong> Git, работа с документацией, самостоятельная декомпозиция задач</li>
+        </ul>
+      </section>
+
+      <section class="side-section education">
+        <h2 class="side-title">Образование</h2>
+        <div class="education-entry">
+          <h3>МГТУ им. Н. Э. Баумана — магистратура</h3>
+          <p class="meta">Москва · 09/2026 — настоящее время</p>
+          <p>
+            Информатика и вычислительная техника, кафедра ИУ6
+            «Компьютерные системы и сети».
+          </p>
+        </div>
+        <div class="education-entry">
+          <h3>МГТУ им. Н. Э. Баумана — бакалавриат</h3>
+          <p class="meta">Москва · 09/2021 — 08/2026</p>
+          <p>
+            Информатика и вычислительная техника, кафедра ИУ6
+            «Компьютерные системы и сети».
+          </p>
+          <p class="key-disciplines">
+            <strong>Ключевые дисциплины:</strong> ООП, компьютерные сети,
+            операционные системы, базы данных, машиннозависимые языки
+            программирования (NASM x86/64) и основы компиляции.
+          </p>
+        </div>
+      </section>
+
+      <section class="side-section education">
+        <h2 class="side-title">Дополнительное образование</h2>
+        <h3><a href="photo_2026-09-28_02-40-29.jpg">Компьютерные сети ↗</a></h3>
+        <p class="meta">27.07.2026 — 10.08.2026 · 72 часа</p>
+        <p>Повышение квалификации, ООО «Академия Дистанционного Образования».</p>
+      </section>
+
+      <p class="note">
+        Названия репозиториев и профиль GitHub кликабельны. Страница адаптирована для экрана
+        и печати в PDF из браузера.
+      </p>
+    </aside>
+  </article>
+</body>
+</html>
