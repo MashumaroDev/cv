@@ -1,0 +1,173 @@
+%-------------------------
+% Резюме в LaTeX
+% Формат основан на шаблоне Jake Gutierrez / sb2nov/resume
+%-------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.25in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Пользовательские команды
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.22in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------ЗАГОЛОВОК----------
+\begin{center}
+  \textbf{\Huge \scshape Денис Бортников} \\ \vspace{2pt}
+  \textbf{\large Junior Fullstack Developer --- Python / Vue.js} \\ \vspace{3pt}
+  \small
+  \href{tel:+79378136099}{\underline{+7 (937) 813-60-99}} $|$
+  \href{mailto:dvbortnikov@yandex.ru}{\underline{dvbortnikov@yandex.ru}} $|$
+  \href{https://t.me/denis_vag}{\underline{@denis\_vag}} $|$
+  \href{https://github.com/MashumaroDev}{\underline{github.com/MashumaroDev}}
+\end{center}
+
+%----------О СЕБЕ----------
+\section{О себе}
+\small{
+Студент первого курса магистратуры МГТУ им. Н. Э. Баумана. Разрабатываю web-приложения
+полного цикла: проектирую REST API и модели данных, реализую интерфейсы и связываю
+frontend с backend. В pet-проекте создал систему управления автосервисом с ролевой
+моделью, онлайн-записью, уведомлениями и административной панелью.
+}
+
+%----------ОПЫТ РАБОТЫ----------
+\section{Опыт работы}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Разработчик ПО}{20.03.2026 -- настоящее время}
+    {ООО АПК «Малиновка»}{Москва}
+    \resumeItemListStart
+      \resumeItem{Сопровождаю программное обеспечение и рабочие станции сотрудников: Windows, драйверы, офисные приложения и периферийное оборудование.}
+      \resumeItem{Диагностирую технические неисправности, устраняю проблемы совместимости и участвую в поддержке внутренней IT-инфраструктуры предприятия.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%----------ПРОЕКТЫ----------
+\section{Проекты}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{DVB --- система управления автосервисом} $|$ \emph{Fullstack pet-проект}}{2026}
+    \resumeItemListStart
+      \resumeItem{Разработал информационную систему для сети автосервисов: REST API, пользовательский интерфейс, административную панель, тестирование и контейнеризацию.}
+      \resumeItem{Декомпозировал предметную область: выделил сущности пользователей, автомобилей, филиалов, подразделений, ремонтных боксов, услуг, механиков, заказов и уведомлений.}
+      \resumeItem{Реализовал ролевую модель и рабочие сценарии для клиента, механика, менеджера, администратора филиала и системного администратора.}
+      \resumeItem{Разработал онлайн-запись с выбором филиала, услуги, автомобиля, даты и времени; добавил создание и отслеживание заказа в личном кабинете.}
+      \resumeItem{Создал CRUD-интерфейсы для сотрудников, филиалов, подразделений и боксов, обработку заказов и просмотр статистики.}
+      \resumeItem{Связал frontend и backend: Axios, JWT-аутентификация, обновление сессии, защищённые маршруты и централизованное состояние в Pinia.}
+      \resumeItem{Реализовал уведомления в реальном времени на Django Channels и Redis.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://github.com/MashumaroDev/DVB_Backend}{\textbf{DVB Backend}} $|$ \emph{Python, Django REST, PostgreSQL, Redis, Docker}}{}
+    \resumeItemListStart
+      \resumeItem{Реализовал REST API, бизнес-логику, собственную модель пользователя, JWT и permissions для разграничения доступа.}
+      \resumeItem{Настроил связи Django ORM между заказами, услугами, сотрудниками, филиалами и автомобилями.}
+      \resumeItem{Использовал ASGI, WebSocket и Redis для уведомлений; добавил фильтрацию, журналирование, юнит-тесты и нагрузочные сценарии Locust.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\href{https://github.com/MashumaroDev/DVB_Frontend}{\textbf{DVB Frontend}} $|$ \emph{Vue 3, JavaScript, Pinia, Playwright}}{}
+    \resumeItemListStart
+      \resumeItem{Создал SPA для клиентов и сотрудников: защищённые маршруты, авторизация, онлайн-запись, профиль, автомобили пользователя и история заказов.}
+      \resumeItem{Разработал административную панель с CRUD-разделами и визуализацией статистики через Chart.js.}
+      \resumeItem{Добавил E2E-сценарии Playwright и их запуск в GitHub Actions.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%----------ОБРАЗОВАНИЕ----------
+\section{Образование}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {МГТУ им. Н. Э. Баумана}{Москва}
+    {Магистратура: Информатика и вычислительная техника, кафедра ИУ6}{09/2026 -- настоящее время}
+  \resumeSubheading
+    {МГТУ им. Н. Э. Баумана}{Москва}
+    {Бакалавриат: Информатика и вычислительная техника, кафедра ИУ6}{09/2021 -- 08/2026}
+    \resumeItemListStart
+      \resumeItem{Кафедра «Компьютерные системы и сети». Ключевые дисциплины: ООП, компьютерные сети, операционные системы, базы данных, NASM x86/64 и основы компиляции.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%----------ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ----------
+\section{Дополнительное образование}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Компьютерные сети}{27.07.2026 -- 10.08.2026}
+    {ООО «Академия Дистанционного Образования», повышение квалификации}{72 часа}
+\resumeSubHeadingListEnd
+
+%----------ТЕХНИЧЕСКИЕ НАВЫКИ----------
+\section{Технические навыки}
+\begin{itemize}[leftmargin=0.15in,label={}]
+  \small{\item{
+    \textbf{Backend}{: Python, Django, Django REST Framework, REST API, JWT, Django Channels} \\
+    \textbf{Frontend}{: JavaScript, Vue 3, Vue Router, Pinia, Axios, HTML, CSS, Chart.js} \\
+    \textbf{Базы данных}{: PostgreSQL, Redis, Django ORM, миграции} \\
+    \textbf{Тестирование}{: юнит-тесты, Playwright, Locust} \\
+    \textbf{Инструменты}{: Git, GitHub Actions, Docker, Docker Compose, Vite, Linux} \\
+    \textbf{Языки}{: русский --- родной, английский --- B1}
+  }}
+\end{itemize}
+
+\end{document}
